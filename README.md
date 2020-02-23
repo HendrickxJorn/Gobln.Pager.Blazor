@@ -5,7 +5,7 @@ Gobln.Pager.Blazor is an easy to use dynamic .Net pager libery for Blazor and up
 ## Frameworks
 
 * .Net Core 3.1 and higher
-* .Net Standard 2.1 and higher
+* .Net Core 2.1 and higher
 
 ## Page
 
