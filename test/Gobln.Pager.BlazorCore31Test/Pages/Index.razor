@@ -1,0 +1,86 @@
+﻿@page "/"
+
+@using Gobln.Pager
+@using Gobln.Pager.Blazor
+
+<div>
+    <h2>Overview</h2>
+
+    <Pager Page=@SimpleList.GetCurrentPage() OnPageIndexChange="ChangePageing" />
+</div>
+<div>
+    <h2>Working with icons</h2>
+    <Pager Page=@SimpleList.GetCurrentPage() OnPageIndexChange="ChangePageing" PagerOptions="@(new PagerOptions() { UseIcons = true } )" />
+</div>
+<div>
+    <h2>Disabled and active states</h2>
+    <Pager Page=@SimpleList.GetCurrentPage() OnPageIndexChange="ChangePageing" PagerOptions="@(new PagerOptions() { ActiveDisplay = true} )" />
+
+</div>
+<div>
+    <h2>Sizing</h2>
+    <Pager Page=@SimpleList.GetCurrentPage() OnPageIndexChange="ChangePageing" PagerOptions="@(new PagerOptions() { PagerSize = PagerSizeEnum.Large } )" />
+    <Pager Page=@SimpleList.GetCurrentPage() OnPageIndexChange="ChangePageing" PagerOptions="@(new PagerOptions() { PagerSize = PagerSizeEnum.Small } )" />
+</div>
+
+<div>
+    <h2>Alignment center</h2>
+    <Pager Page=@SimpleList.GetCurrentPage() OnPageIndexChange="ChangePageing" PagerOptions="@(new PagerOptions() { PagerAlignment = PagerAlignmentEnum.Center } )" />
+</div>
+
+<div>
+    <h2>Alignment right</h2>
+    <Pager Page=@SimpleList.GetCurrentPage() OnPageIndexChange="ChangePageing" PagerOptions="@(new PagerOptions() {  PagerAlignment = PagerAlignmentEnum.Right } )" />
+</div>
+
+<div>
+    <h2>Show only page numbers items</h2>
+    <Pager Page=@SimpleList.GetCurrentPage() OnPageIndexChange="ChangePageing" PagerOptions="@(new PagerOptions() { ItemShowOrder = new[] { ItemShow.PagesItems } } )" />
+</div>
+
+<div>
+    <h2>Show only next and previous</h2>
+    <Pager Page=@SimpleList.GetCurrentPage() OnPageIndexChange="ChangePageing" PagerOptions="@(new PagerOptions() { ItemShowOrder = new[] { ItemShow.PreviousItem, ItemShow.NextItem } } )" />
+</div>
+
+<div>
+    <h2>Hide items if there are disabled</h2>
+    <Pager Page=@SimpleList.GetCurrentPage() OnPageIndexChange="ChangePageing" PagerOptions="@(new PagerOptions() { AlwaysShowFirstPageItem = false, AlwaysShowJumpPageItem = false, AlwaysShowLastPageItem = false, AlwaysShowNextPageItem = false, AlwaysShowPreviousPageItem = false } )" />
+</div>
+
+<div>
+    <h2>Show only page number range</h2>
+    <Pager Page=@SimpleList.GetCurrentPage() OnPageIndexChange="ChangePageing" PagerOptions="@(new PagerOptions() { ItemShowOrder = new[] { ItemShow.PagesItemsRange } } )" />
+</div>
+
+
+@code {
+    public PagedList<string> SimpleList { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var tempStrings = new[]{
+            "Item 1","Item 2",
+            "Item 3","Item 4",
+            "Item 5","Item 6",
+            "Item 7","Item 8",
+            "Item 9","Item 10",
+            "Item 11","Item 12",
+            "Item 13","Item 14",
+            "Item 15","Item 16",
+            "Item 17","Item 18",
+            "Item 19","Item 20"
+        };
+
+        SimpleList = new PagedList<string>(tempStrings);
+
+        SimpleList.PageSize = 2;
+
+        await base.OnInitializedAsync();
+    }
+
+    protected void ChangePageing(int pageIndex)
+    {
+        SimpleList.CurrentPageIndex = pageIndex;
+    }
+}

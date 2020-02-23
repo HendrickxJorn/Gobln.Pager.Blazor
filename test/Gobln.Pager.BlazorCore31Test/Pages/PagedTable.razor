@@ -1,0 +1,68 @@
+﻿@page "/PagedTable"
+
+@using Gobln.Pager.Blazor
+@using Gobln.Pager.BlazorCore31Test.Json
+
+@using Newtonsoft.Json
+@using System.IO
+
+<h3>Table example</h3>
+
+<div>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th title="@PagedJson.DescriptionFor(model => model.Name)">
+                    @PagedJson.DisplayNameFor(model => model.Name)
+                </th>
+                <th title="@PagedJson.DescriptionFor(model => model.Email)">
+                    @PagedJson.DisplayNameFor(model => model.Email)
+                </th>
+                <th title="@PagedJson.DescriptionFor(model => model.Guid)">
+                    @PagedJson.DisplayNameFor(model => model.Guid)
+                </th>
+                <th title="@PagedJson.DescriptionFor(model => model.Registered)">
+                    @PagedJson.DisplayNameFor(model => model.Registered)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in PagedJson.GetCurrentPage())
+            { 
+                <tr>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @item.Guid
+                    </td>
+                    <td>
+                        @item.Registered
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <Pager Page=@PagedJson.GetCurrentPage() OnPageIndexChange="ChangePageing" PagerOptions="@(new PagerOptions() { ItemShowOrder = new[] { ItemShow.PreviousItem, ItemShow.PagesItems, ItemShow.NextItem } } )" />
+</div>
+
+@code {
+    public PagedList<TestDataLine> PagedJson;
+
+    protected override void OnInitialized()
+    {
+        //Get testData
+        var myJsonString = File.ReadAllText(Path.Combine( Environment.CurrentDirectory, "Json", "TestData.json"));
+
+        PagedJson = JsonConvert.DeserializeObject<PagedList<TestDataLine>>(myJsonString);
+    }
+
+    protected void ChangePageing(int pageIndex)
+    {
+        PagedJson.CurrentPageIndex = pageIndex;
+    }
+}
