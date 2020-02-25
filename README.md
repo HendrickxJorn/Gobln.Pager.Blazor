@@ -95,7 +95,7 @@ For more examples, check the test project
 
 ## Installing Gobln.Pager
 
-The project is on [Nuget](https://www.nuget.org/packages/Gobln.Pager/). Install via the NuGet Package Manager.
+The project is on [Nuget](https://www.nuget.org/packages/Gobln.Pager.Blazor/). Install via the NuGet Package Manager.
 
 PM > Install-Package Gobln.Pager
 
