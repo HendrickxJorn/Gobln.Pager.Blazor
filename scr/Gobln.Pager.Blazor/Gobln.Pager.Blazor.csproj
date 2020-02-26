@@ -9,7 +9,7 @@
     <PackageId>Gobln.Pager.Blazor</PackageId>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>Page, Pager, Paging, Pagination, Core, Blazor</PackageTags>
-    <PackageProjectUrl>https://github.com/HendrickxJorn/Gobln.Pager</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/HendrickxJorn/Gobln.Pager.Blazor</PackageProjectUrl>
     <Authors>Jorn Hendrickx</Authors>
     <Product>Gobln.Pager.Blazor</Product>
     <AssemblyName>Gobln.Pager.Blazor</AssemblyName>
@@ -20,7 +20,7 @@
     <RepositoryUrl>https://github.com/HendrickxJorn/Gobln.Pager.Blazor</RepositoryUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <ApplicationIcon></ApplicationIcon>
-    <PackageIconUrl>https://github.com/HendrickxJorn/Gobln.Pager/blob/master/images/Gobln%20Pager%20Blazor.ico?raw=true</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/HendrickxJorn/Gobln.Pager.Blazor/master/images/Gobln%20Pager%20Blazor.ico</PackageIconUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,8 +31,8 @@
     <DocumentationFile>bin\Debug\netcoreapp3.1\Gobln.Pager.Blazor.xml</DocumentationFile>
   </PropertyGroup>
   
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.1|AnyCPU'">
-    <DocumentationFile>bin\Debug\netstandard2.1\Gobln.Pager.Blazor.xml</DocumentationFile>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netcoreapp2.1|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.1\Gobln.Pager.Blazor.xml</DocumentationFile>
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp3.1|AnyCPU'">
@@ -41,8 +41,8 @@
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
   
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.1|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.1\Gobln.Pager.Blazor.xml</DocumentationFile>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netcoreapp2.1|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp2.1\Gobln.Pager.Blazor.xml</DocumentationFile>
     <DebugType>none</DebugType>
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
