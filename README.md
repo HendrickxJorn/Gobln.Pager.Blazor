@@ -11,9 +11,7 @@ Gobln.Pager.Blazor is an easy to use dynamic .Net pager libery for Blazor and up
 
 ### How to use
 
-Install Gobln.Pager.Blazor, trough [Nuget](https://nuget.org/) or other means.
-
-PM > Install-Package Gobln.Pager.Blazor
+Install Gobln.Pager.Blazor, trough [Nuget](https://www.nuget.org/) or other means.
 
 Use the tag <Pager> and give it the current page and you will get the 10 first items from you page.
 To Change the page size or the selected page you only need to add the attribute PagerOptions.
@@ -93,11 +91,11 @@ protected void ChangePageing(int pageIndex)
 
 For more examples, check the test project
 
-## Installing Gobln.Pager
+## Installing Gobln.Pager.Blazor
 
 The project is on [Nuget](https://www.nuget.org/packages/Gobln.Pager.Blazor/). Install via the NuGet Package Manager.
 
-PM > Install-Package Gobln.Pager
+PM > Install-Package Gobln.Pager.Blazor
 
 ## License
 
