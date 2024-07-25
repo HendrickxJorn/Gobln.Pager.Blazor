@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29609.76
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gobln.Pager.Blazor", "scr\Gobln.Pager.Blazor\Gobln.Pager.Blazor.csproj", "{0BE29E5E-B7D1-4CD2-AEF8-8BD514CF092F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gobln.Pager.BlazorCore31Test", "test\Gobln.Pager.BlazorCore31Test\Gobln.Pager.BlazorCore31Test.csproj", "{C32888D9-2A75-44DB-9AC7-B78FE2C003CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scr", "scr", "{2B5AC520-556A-40C7-BB4D-4DEE83FA87A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{9338D85E-45D1-47C0-B63F-24EF751ADD34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +28,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0BE29E5E-B7D1-4CD2-AEF8-8BD514CF092F} = {2B5AC520-556A-40C7-BB4D-4DEE83FA87A3}
+		{C32888D9-2A75-44DB-9AC7-B78FE2C003CA} = {9338D85E-45D1-47C0-B63F-24EF751ADD34}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35AED0EC-8E9D-48D8-A892-8C659D2BC828}
